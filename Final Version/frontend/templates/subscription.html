@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription</title>
+    <style>
+        .sub-h1{
+        width: 100%;
+        background-color:rgb(15, 108, 139);
+        text-align: center;
+        color: white;
+        height: 100px; 
+        line-height: 100px; 
+        text-align: center;
+        margin: 0px;
+    }
+    .sub-form{
+        text-align: center;
+    }
+    </style>
+
+</head>
+
+<body>
+    <h1 class="sub-h1">Change your subscription here</h1>
+    <br><br>
+    <p style="text-align: center; font-weight: bold; color: rgb(15, 108, 139);">Current Subscription Status: {{ current_user.subscription }}</p>
+    <form method="POST" action="" class="sub-form">
+        {{ form.hidden_tag() }}
+        {% if current_user.subscription == 'subscribed' %}
+        <button type="submit" name="action" value="unsubscribe">Unsubscribe</button>
+        {% else %}
+        <button type="submit" name="action" value="subscribe">Subscribe</button>
+        {% endif %}
+    </form>
+
+    
+
+    <br>
+    <a href="{{url_for('logout')}}" style="float: right; margin-right: 20px;">Logout</a>
+</body>
+
+</html>

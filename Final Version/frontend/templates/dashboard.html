@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        .dashboard-h1{
+            width: 100%;
+            background-color:rgb(15, 108, 139);
+            text-align: center;
+            color: white;
+            height: 100px; 
+            line-height: 100px; 
+            text-align: center;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="dashboard-h1">Hello you are logged in.</h1>
+    <br><br>
+    <div style="text-align: center;">
+        <h4 style="margin: 0px; display: inline;">Change your subscription by clicking the link:   </h4>
+        <a href="{{ url_for('subscription') }}">Subscription</a>
+    </div>
+    <br><br>
+    <a href="{{url_for('logout')}}" style="float: right; margin-right: 20px;"><b>Logout</b></a>
+</body>
+
+</html>

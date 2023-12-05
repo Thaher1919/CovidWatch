@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        .covid-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: white;
+            font-size: 100px;
+            text-align: center;
+            transform: translate(-50%, -50%);
+        }
+
+        .covid img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            filter: blur(7px);
+        }
+        .covid {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+        .first-half{
+            width: 48%;
+            float: left;
+            border: 1px solid #000;
+            padding: 10px;
+        }
+        .first-half a{
+            margin-left: 50%;
+        }
+        .first-half h2{
+            text-align: center;
+        }
+        .first-half h3{
+            text-align: center;
+        }
+        .second-half{
+            width: 48%;
+            float: right;
+            border: 1px solid #000;
+            padding: 10px;;
+        }
+        .second-half a{
+            margin-left: 50%;
+        }
+        .second-half h2{
+            text-align: center;
+        }
+        .second-half h3{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="covid">
+        <img src="{{ url_for('static', filename='covid.jpeg') }}" alt="Covid Watch">
+        <div class="covid-text"><b>Covid Watch</b></div>
+    </div><br><br>
+    <div class="first-half">
+        <h2>Already have an account?</h2>
+        <h3>Login by clicking the link below</h3>
+        <a href="{{ url_for('login') }}">Login</a><br>
+    </div>
+    <div class="second-half">
+        <h2>Do not have an account?</h2>
+        <h3>Register by clicking the link below</h3>
+        <a href="{{ url_for('register') }}">Register</a><br>
+    </div>
+   
+
+</body>
+
+</html>
